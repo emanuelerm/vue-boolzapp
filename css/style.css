@@ -51,7 +51,7 @@
 }
 
 #left-content-bottom {
-    height: 100%;
+    height: calc(100% - 4rem);
     width: 100%;
 }
 
@@ -68,7 +68,7 @@
 }
 
 #chats {
-    height: 100%;
+    height: calc(100% - 7rem);
     width: 100%;
 }
 
