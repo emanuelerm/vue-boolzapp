@@ -1,0 +1,8 @@
+.boolzapp-bg {
+    background: rgb(217, 217, 217);
+    background: -moz-linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
+    background: -webkit-linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
+    background: linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9d9d9", endColorstr="#25d366", GradientType=1);
+    ;
+}
