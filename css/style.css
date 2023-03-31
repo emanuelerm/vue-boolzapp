@@ -4,5 +4,76 @@
     background: -webkit-linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
     background: linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9d9d9", endColorstr="#25d366", GradientType=1);
-    ;
+}
+
+.app-container {
+    background-color: black;
+    width: 80%;
+    height: 90%;
+}
+
+/* RIGHT CONTAINER */
+#right-content-container {
+    background-color: darkgreen;
+    height: 100%;
+    width: 65%;
+}
+
+#user-contact {
+    background-color: darkmagenta;
+    height: 4rem;
+    width: 100%;
+}
+
+#chat {
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 8rem);
+    width: 100%;
+}
+
+#send-messages {
+    background-color: darkmagenta;
+    height: 4rem;
+    width: 100%;
+}
+
+/* LEFT CONTAINER */
+#left-content-container {
+    background-color: darkmagenta;
+    height: 100%;
+    width: 35%;
+}
+
+#my-contact {
+    background-color: darkgreen;
+    height: 4rem;
+    width: 100%;
+}
+
+#left-content-bottom {
+    height: 100%;
+    width: 100%;
+}
+
+#turn-on {
+    background-color: aqua;
+    height: 4rem;
+    width: 100%;
+}
+
+#search-tab {
+    background-color: darkgreen;
+    height: 3rem;
+    width: 100%;
+}
+
+#chats {
+    height: 100%;
+    width: 100%;
+}
+
+.single-user-chat {
+    background-color: aliceblue;
+    height: 4rem;
+    width: 100%;
 }
