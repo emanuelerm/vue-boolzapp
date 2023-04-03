@@ -1,8 +1,13 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFFFFF;
+}
+
 .boolzapp-bg {
-    background: rgb(217, 217, 217);
-    background: -moz-linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
-    background: -webkit-linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
-    background: linear-gradient(0deg, rgba(217, 217, 217, 1) 80%, rgba(37, 211, 102, 1) 80%);
+    background: rgb(17, 27, 33);
+    background: -moz-linear-gradient(0deg, rgba(17, 27, 33, 1) 80%, rgba(0, 168, 132, 1) 80%);
+    background: -webkit-linear-gradient(0deg, rgba(17, 27, 33, 1) 80%, rgba(0, 168, 132, 1) 80%);
+    background: linear-gradient(0deg, rgba(17, 27, 33, 1) 80%, rgba(0, 168, 132, 1) 80%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9d9d9", endColorstr="#25d366", GradientType=1);
 }
 
@@ -12,40 +17,80 @@
     height: 90%;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 /* RIGHT CONTAINER */
 #right-content-container {
-    background-color: darkgreen;
+    background-image: url(../img/view_chat.png);
+    background-size: cover;
     height: 100%;
     width: 65%;
 }
 
 #user-contact {
-    background-color: darkmagenta;
+    background-color: #222E35;
     height: 4rem;
     width: 100%;
 }
 
 #chat {
     background-image: url(../img/mine.jpg);
+    background-size: cover;
     height: calc(100% - 8rem);
     width: 100%;
 }
 
 #send-messages {
-    background-color: darkmagenta;
+    background-color: #222E35;
     height: 4rem;
     width: 100%;
 }
 
+.sent {
+    margin-left: auto;
+    background-color: #25d366;
+    width: fit-content;
+    padding: 0.25rem 1rem 0.35rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.received {
+    margin-right: auto;
+    background-color: #FFFFFF;
+    width: fit-content;
+    padding: 0.25rem 1rem 0.35rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #171f24;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.time-messages {
+    font-size: 0.5rem;
+    margin-left: auto;
+}
+
 /* LEFT CONTAINER */
 #left-content-container {
-    background-color: darkmagenta;
+    background-color: #222E35;
     height: 100%;
     width: 35%;
 }
 
 #my-contact {
-    background-color: darkgreen;
+    background-color: #222E35;
+    border-right: #686868 1px solid;
     height: 4rem;
     width: 100%;
 }
@@ -62,7 +107,7 @@
 }
 
 #search-tab {
-    background-color: darkgreen;
+    background-color: #222E35;
     height: 3rem;
     width: 100%;
 }
@@ -73,7 +118,39 @@
 }
 
 .single-user-chat {
-    background-color: aliceblue;
+    background-color: #222E35;
+    border-bottom: #686868 1px solid;
     height: 4rem;
     width: 100%;
+}
+
+.avatar-contact {
+    width: 3rem;
+    height: 3rem;
+}
+
+.profile-pic {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Scrollbar CSS */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #25d366 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #171f24;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #25d366;
+    border-radius: 10px;
 }
