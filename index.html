@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js"
+        integrity="sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>Boolzapp</title>
 </head>
@@ -35,7 +38,13 @@
                     </div>
                     <div id="left-content-bottom">
                         <div id="turn-on"></div>
-                        <div id="search-tab"></div>
+                        <div id="search-tab" class="d-flex justify-content-center">
+                            <div class="input-group h-75 mx-2 my-auto">
+                                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" class="form-control" id="search"
+                                    placeholder="Find or start new chat">
+                            </div>
+                        </div>
                         <div id="chats" class="overflow-y-auto">
                             <div v-for="contact in contacts">
                                 <div @click="openContactChat(contact)"
@@ -43,9 +52,13 @@
                                     <div class="avatar-contact mx-3">
                                         <img :src="contact.avatar" alt="">
                                     </div>
-                                    <div class="contact-info">
-                                        <h6>{{contact.name}}</h6>
-                                        <p>{{}}</p>
+                                    <div class="contact-info pt-3">
+                                        <h6 class="ellipsis">{{contact.name}}</h6>
+                                        <p class="last-message ellipsis fw-light fst-italic">
+                                            {{contact.messages[contact.messages.length -
+                                            1].message}}
+                                        </p>
+                                        <small class="last-message-date"></small>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +69,8 @@
                     <div id="user-contact" class="d-flex justify-content-between align-items-center">
                         <div class="mx-3 d-flex align-items-center">
                             <img class="profile-pic" :src="activeUser.avatar" :alt="activeUser.id">
-                            <h6 class="ms-2 lh-base mb-0">{{activeUser.name}}</h6>
+                            <h6 class="ms-2 mb-0">{{activeUser.name}}</h6>
+                            <p class="last-seen"></p>
                         </div>
                         <div class="icons-menu"></div>
                     </div>
@@ -64,22 +78,32 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 pt-3">
-                                    <div class="mb-3" v-for="message in activeUser.messages" :class="message.status">
-                                        <p class="mb-0 position-relative">
+                                    <div class="mb-3 single-message" v-for="message in activeUser.messages"
+                                        :class="message.status">
+                                        <p class="mb-0">
                                             {{message.message}}
                                         </p>
-                                        <small class="time-messages position-absolute">{{message.date}}</small>
+                                        <div class="d-flex justify-content-end">
+                                            <small class="time-messages pt-1">{{message.date}}</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="send-messages">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-2"></div>
-                                <div class="col-8"></div>
-                                <div class="col-2"></div>
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-1 text-center">
+                                    <i class="fa-sharp fa-regular fa-face-smile fa-lg pt-2"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input @keyup.enter="sendMessage()" v-model="messageTxt" type="text"
+                                        class="form-control" id="send" placeholder="Write a message">
+                                </div>
+                                <div class="col-1 text-center">
+                                    <i class="fa-solid fa-microphone fa-lg pt-2"></i>
+                                </div>
                             </div>
                         </div>
                     </div>

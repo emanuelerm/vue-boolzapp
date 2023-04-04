@@ -28,6 +28,7 @@ img {
 #right-content-container {
     background-image: url(../img/view_chat.png);
     background-size: cover;
+    border-left: #686868 1px solid;
     height: 100%;
     width: 65%;
 }
@@ -41,13 +42,13 @@ img {
 #chat {
     background-image: url(../img/mine.jpg);
     background-size: cover;
-    height: calc(100% - 8rem);
+    height: calc(100% - 7rem);
     width: 100%;
 }
 
 #send-messages {
     background-color: #222E35;
-    height: 4rem;
+    height: 3rem;
     width: 100%;
 }
 
@@ -76,10 +77,11 @@ img {
     font-style: italic;
 }
 
-.time-messages {
-    font-size: 0.5rem;
-    margin-left: auto;
+.send {
+    width: 100%;
+    height: 75%;
 }
+
 
 /* LEFT CONTAINER */
 #left-content-container {
@@ -90,7 +92,6 @@ img {
 
 #my-contact {
     background-color: #222E35;
-    border-right: #686868 1px solid;
     height: 4rem;
     width: 100%;
 }
@@ -119,9 +120,14 @@ img {
 
 .single-user-chat {
     background-color: #222E35;
-    border-bottom: #686868 1px solid;
+    border-top: #686868 1px solid;
     height: 4rem;
     width: 100%;
+}
+
+.single-user-chat:hover {
+    background-color: #171f24;
+    cursor: pointer;
 }
 
 .avatar-contact {
@@ -132,6 +138,42 @@ img {
 .profile-pic {
     width: 3rem;
     height: 3rem;
+}
+
+.contact-info {
+    width: calc(100% - 5rem);
+}
+
+.time-messages {
+    font-size: 0.5rem;
+    top: 1.5rem;
+}
+
+.last-message {
+    font-size: 0.7rem;
+}
+
+.ellipsis {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+::-webkit-input-placeholder {
+    font-size: 13px;
+}
+
+::-moz-placeholder {
+    font-size: 13px;
+}
+
+:-ms-input-placeholder {
+    font-size: 13px;
+}
+
+::placeholder {
+    font-size: 13px;
 }
 
 /* Scrollbar CSS */
